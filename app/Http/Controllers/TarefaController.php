@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Tarefa;
 use Illuminate\Http\Request;
+use App\Models\Tarefa;
 
 class TarefaController extends Controller
 {
@@ -15,7 +15,7 @@ class TarefaController extends Controller
 
     public function create()
     {
-        return view ('tarefas.create');
+        return view('tarefas.create');
     }
 
     public function store(Request $request)
@@ -23,6 +23,4 @@ class TarefaController extends Controller
         Tarefa::create($request->only('titulo', 'descricao'));
         return redirect('/tarefas');
     }
-
-
 }
